@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProductSchema",
+  "description": "Schema para validar se o produto segue as regras Json",
+  "type": "object",
+  "properties": {
+    "Product": {
+      "type": "object",
+      "properties": {
+        "ProductID": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[0-9]+$"
+        },
+        "Category": {
+          "type": "string"
+        },
+        "ProductName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ProductType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "Price": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\d+(\\.\\d+)?$"
+        },
+        "Class": {
+          "type": "string"
+        },
+        "Company": {
+          "type": "string"
+        },
+        "Provider": {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "City": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "Name",
+            "City"
+          ]
+        }
+      },
+      "required": [
+        "ProductID",
+        "Category",
+        "ProductName",
+        "ProductType",
+        "Price",
+        "Class",
+        "Company",
+        "Provider"
+      ]
+    }
+  },
+  "required": [
+    "Product"
+  ]
+}
